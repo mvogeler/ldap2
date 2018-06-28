@@ -1,0 +1,190 @@
+version: 1
+
+dn: dc=example,dc=com
+objectClass: organization
+objectClass: dcObject
+objectClass: top
+dc: example
+o: example.com
+
+dn: cn=admin,dc=example,dc=com
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+description: LDAP administrator
+userPassword: password
+
+dn: uid=newton,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Isaac Newton
+sn: Newton
+mail: newton@ldap.forumsys.com
+uid: newton
+userPassword: password
+
+dn: uid=einstein,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Albert Einstein
+sn: Einstein
+mail: einstein@ldap.forumsys.com
+telephoneNumber: 314-159-2653
+uid: einstein
+userPassword: password
+
+dn: uid=tesla,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Nikola Tesla
+sn: Tesla
+uid: tesla
+mail: tesla@ldap.forumsys.com
+userPassword: password
+
+dn: uid=galieleo,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Galileo Galilei
+sn: Galilei
+mail: galieleo@ldap.forumsys.com
+uid: galieleo
+userPassword: password
+
+dn: uid=euler,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Leonhard Euler
+sn: Euler
+mail: euler@ldap.forumsys.com
+uid: euler
+userPassword: password
+
+dn: uid=gauss,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Carl Friedrich Gauss
+sn: Gauss
+mail: gauss@ldap.forumsys.com
+uid: gauss
+userPassword: password
+
+dn: uid=riemann,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Bernhard Riemann
+sn: Riemann
+mail: riemann@ldap.forumsys.com
+uid: riemann
+userPassword: password
+
+dn: uid=euclid,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Euclid
+sn: Euclid
+mail: euclid@ldap.forumsys.com
+uid: euclid
+userPassword: password
+
+dn: ou=mathematicians,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Mathematicians
+uniqueMember: uid=euclid,dc=example,dc=com
+uniqueMember: uid=riemann,dc=example,dc=com
+uniqueMember: uid=euler,dc=example,dc=com
+uniqueMember: uid=gauss,dc=example,dc=com
+uniqueMember: uid=test,dc=example,dc=com
+ou: mathematicians
+
+dn: ou=scientists,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Scientists
+uniqueMember: uid=einstein,dc=example,dc=com
+uniqueMember: uid=galieleo,dc=example,dc=com
+uniqueMember: uid=tesla,dc=example,dc=com
+uniqueMember: uid=newton,dc=example,dc=com
+uniqueMember: uid=training,dc=example,dc=com
+uniqueMember: uid=jmacy,dc=example,dc=com
+ou: scientists
+
+dn: ou=italians,ou=scientists,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Italians
+uniqueMember: uid=tesla,dc=example,dc=com
+ou: italians
+
+dn: ou=chemists,dc=example,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Chemists
+uniqueMember: uid=curie,dc=example,dc=com
+uniqueMember: uid=boyle,dc=example,dc=com
+uniqueMember: uid=nobel,dc=example,dc=com
+uniqueMember: uid=pasteur,dc=example,dc=com
+ou: chemists
+
+dn: uid=curie,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Marie Curie
+sn: Curie
+mail: curie@ldap.forumsys.com
+uid: curie
+userPassword: password
+
+dn: uid=nobel,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Alfred Nobel
+sn: Nobel
+mail: nobel@ldap.forumsys.com
+uid: nobel
+userPassword: password
+
+dn: uid=boyle,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Robert Boyle
+sn: Boyle
+mail: boyle@ldap.forumsys.com
+telephoneNumber: 999-867-5309
+uid: boyle
+userPassword: password
+
+dn: uid=pasteur,dc=example,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Louis Pasteur
+sn: Pasteur
+mail: pasteur@ldap.forumsys.com
+telephoneNumber: 602-214-4978
+uid: pasteur
+userPassword: password

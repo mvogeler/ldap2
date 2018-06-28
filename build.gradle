@@ -27,10 +27,14 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.ldap:spring-ldap-core")
     compile("org.springframework.security:spring-security-ldap")
+    compile("org.springframework.data:spring-data-ldap")
+    compile("org.springframework.data:spring-data-jpa")
     compile("org.springframework:spring-tx")
     compile("com.unboundid:unboundid-ldapsdk")
+    compile("com.h2database:h2")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile("org.springframework.security:spring-security-test")
 }

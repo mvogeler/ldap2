@@ -2,6 +2,7 @@ package com.example.ldap;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.ldap.OperationNotSupportedException;
 import org.springframework.ldap.core.AttributesMapper;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
@@ -9,6 +10,7 @@ import org.springframework.ldap.query.LdapQuery;
 import org.springframework.ldap.query.LdapQueryBuilder;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -56,6 +58,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new UsernameNotFoundException("User '" + username + "' does not exist!");
         } catch (org.springframework.ldap.AuthenticationException e) {
             throw new BadCredentialsException("Invalid Username/Password Combination!");
+        } catch (OperationNotSupportedException e) {
+            throw new InsufficientAuthenticationException("Password Required!");
         }
 
         UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(
